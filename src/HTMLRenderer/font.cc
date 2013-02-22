@@ -501,6 +501,11 @@ void HTMLRenderer::embed_font(const string & filepath, GfxFont * font, FontInfo 
     ffw_save(fn.c_str());
 
     ffw_close();
+
+    //debug
+    {
+        std::cerr << "font " << info.id << ' ' << info.ascent << ' ' << info.descent << std::endl;
+    }
 }
 
 

@@ -285,7 +285,6 @@ void ffw_metric(double * ascent, double * descent)
     DBounds bb;
     SplineFontFindBounds(sf, &bb);
 
-    /*
     printf("bb %lf %lf\n", bb.maxy, bb.miny);
     printf("_ %d %d\n", sf->ascent, sf->descent);
     printf("win %d %d\n", info->os2_winascent, info->os2_windescent);
@@ -294,7 +293,6 @@ void ffw_metric(double * ascent, double * descent)
     printf("%d %d\n", info->typoascent_add, info->typodescent_add);
     printf("hhead %d %d\n", info->hhead_ascent, info->hhead_descent);
     printf("%d %d\n", info->hheadascent_add, info->hheaddescent_add);
-    */
 
     int em = sf->ascent + sf->descent;
 
