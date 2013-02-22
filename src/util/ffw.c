@@ -333,6 +333,8 @@ void ffw_metric(double * ascent, double * descent)
 
     info->os2_typolinegap = 0;
     info->linegap = 0;
+
+    printf("fixed %d %d\n", a, d);
 }
 
 /*
