@@ -173,6 +173,7 @@ void HTMLRenderer::embed_font(const string & filepath, GfxFont * font, FontInfo 
     }
 
     ffw_load_font(filepath.c_str());
+    std::cerr << "raw em size " << ffw_get_em_size() << std::endl;
     ffw_prepare_font();
 
     if(param->debug)
@@ -202,6 +203,8 @@ void HTMLRenderer::embed_font(const string & filepath, GfxFont * font, FontInfo 
     const char * used_map = nullptr;
 
     info.em_size = ffw_get_em_size();
+    //debug
+    std::cerr << "em_size " << info.em_size << std::endl;
 
     if(get_metric_only)
     {
@@ -498,6 +501,9 @@ void HTMLRenderer::embed_font(const string & filepath, GfxFont * font, FontInfo 
 
     ffw_load_font(cur_tmp_fn.c_str());
     ffw_metric(&info.ascent, &info.descent);
+    {
+        std::cerr << "new em size " << ffw_get_em_size() << std::endl;
+    }
     ffw_save(fn.c_str());
 
     ffw_close();
